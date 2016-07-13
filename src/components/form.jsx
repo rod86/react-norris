@@ -32,7 +32,7 @@ class Form extends Component {
 
     render() {
         return (
-            <form className="form-inline" onSubmit={this.onFormSubmit}>
+            <form className="form-inline" id="joke-options" onSubmit={this.onFormSubmit}>
                 <div className="form-group">
                     <label htmlFor="firstName">First Name</label>
                     <input type="text"

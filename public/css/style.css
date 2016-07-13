@@ -1,0 +1,12 @@
+.joke {
+    font-size: 21px;
+    font-weight: 200;
+}
+
+#joke-options .form-group {
+    margin-right: 20px;
+}
+
+#joke-options label {
+    margin-right: 8px;
+}

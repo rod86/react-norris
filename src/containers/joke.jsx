@@ -4,7 +4,7 @@ import { fetchJoke } from '../actions/index';
 
 class Joke extends Component {
 
-    componentDidMount() {
+    componentWillMount() {
         const options = {
             firstName: this.props.firstName || null,
             lastName: this.props.lastName || null,
@@ -14,27 +14,16 @@ class Joke extends Component {
         this.props.fetchJoke(options);
     }
 
-    componentWillReceiveProps(nextProps) {
-        const options = {
-            firstName: nextProps.firstName || null,
-            lastName: nextProps.lastName || null,
-            limitTo: (nextProps.categories) ? `[${nextProps.categories}]` : null
-        };
-
-        //this.props.fetchJoke(options);
-    }
-
     render() {
-        const joke = this.props.current;
-        console.log(joke);
+        const { currentJoke } = this.props;
 
-        if (!joke) {
+        if (!currentJoke) {
             return <div>Loading...</div>;
         }
 
         return (
-            <div>
-                {joke.joke}
+            <div className="joke">
+                {currentJoke.joke}
             </div>
         )
     }
@@ -42,7 +31,7 @@ class Joke extends Component {
 
 function mapStateToProps(state) {
     return {
-        current: state.joke.current
+        currentJoke: state.joke.currentJoke
     }
 }
 

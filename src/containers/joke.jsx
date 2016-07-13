@@ -1,29 +1,30 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchJoke } from '../actions/index';
+import Form from '../components/form';
+import JokeView from '../components/JokeView';
 
 class Joke extends Component {
 
-    componentWillMount() {
-        const options = {
-            firstName: this.props.firstName || null,
-            lastName: this.props.lastName || null,
-            limitTo: (this.props.categories) ? `[${this.props.categories}]` : null
+    getJoke(data) {
+        const params = {
+            firstName: data.firstName || null,
+            lastName: data.lastName || null,
+            limitTo: (data.category) ? `[${data.category}]` : null
         };
 
-        this.props.fetchJoke(options);
+        this.props.fetchJoke(params);
     }
 
     render() {
-        const { currentJoke } = this.props;
-
-        if (!currentJoke) {
-            return <div>Loading...</div>;
-        }
-
         return (
-            <div className="joke">
-                {currentJoke.joke}
+            <div className="joke-component">
+                <JokeView joke={this.props.currentJoke} />
+                <div className="row">
+                    <div className="col-md-12">
+                        <Form onGetJoke={this.getJoke.bind(this)} />
+                    </div>
+                </div>
             </div>
         )
     }

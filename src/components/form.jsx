@@ -53,7 +53,7 @@ class Form extends Component {
                 </div>
                 <div className="form-group">
                     <label htmlFor="catogory">Category</label>
-                    <select className="form-control" id="catogory" onChange={this.handleChange}>
+                    <select className="form-control" id="category" onChange={this.handleChange}>
                         <option value="">All</option>
                         <option value="nerdy">Nerdy</option>
                         <option value="explicit">Explicit</option>

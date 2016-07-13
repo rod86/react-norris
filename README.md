@@ -4,7 +4,7 @@ This a React and Redux demo that uses the [Internet Chuck Norris Database API](h
 
 ## Install
 
-Run this commands
+Run these commands
 
 ```
 $ git clone https://github.com/rod86/react-norris.git react-norris

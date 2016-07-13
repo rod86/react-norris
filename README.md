@@ -1,6 +1,6 @@
 # React Norris
 
-This a React and Redux demo that uses the [Internet Chuck Norris Database API](www.icndb.com/api/)
+This a React and Redux demo that uses the [Internet Chuck Norris Database API](http://www.icndb.com/api/)
 
 ## Install
 
